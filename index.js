@@ -1,6 +1,7 @@
 const express = require ('express');
-
 const app = express()
+const port = 4000;
+app.use(express.static(__dirname + '/public'))
  
 app.get('/', function (req, res) {
   res.send('Holas mundo')
@@ -15,4 +16,6 @@ app.post('/', function (req, res) {
   })
 
 
-app.listen(4000)
+app.listen(4000, ()=>{
+  console.log(`Server Started-Port ${port}`);
+});
